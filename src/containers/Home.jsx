@@ -10,11 +10,10 @@ import '../assets/styles/App.scss'
 
 const API = 'http://localhost:3000/initalState'
 
-const App = () => {
+const Home = () => {
     const initialState = useInitialState(API)
     return(
-        <div className="App">
-            <Header/>
+        <>
             <Search/>
             {initialState.mylist.length > 0 &&
                 <Categories title ="Mi lista">
@@ -41,9 +40,7 @@ const App = () => {
                     )} 
                 </Carousel>
             </Categories>
-
-            <Footer/>
-        </div>
+        </>
     )
 }
-export default App
+export default Home
