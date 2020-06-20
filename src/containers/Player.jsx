@@ -6,14 +6,11 @@ import '../assets/styles/components/Player.scss'
 
 const Player = props =>{
     const {id} = props.match.params
-    //const [loading, setLoading] = useState(true)
     const hasPlaying = Object.keys(props.playing).length > 0
 
     useEffect(() =>{
         props.getVideoSource(id)
     }, [])
-
-    //if (loading) return <h2>Cargando video...</h2>
 
     return hasPlaying ? (
         <div className="Player">
